@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert currencies</title>
+    <link rel="stylesheet" href="converter.css">
+    <script>
+        function currencyConverter(valNum) {
+            if (converter.takas.value <= 0)
+                window.alert("Enter Value Greaterthan 0");
+            else {
+    
+                document.getElementById("dollar").value = (valNum * 0.0117864).toFixed(2);
+                document.getElementById("rupee").value = (valNum * 0.891347).toFixed(2);
+                document.getElementById("pound").value = (valNum * 0.00949435).toFixed(2);
+                document.getElementById("yen").value = (valNum * 1.25958).toFixed(2);
+                
+            }
+        }
+        function convertDollarToOthers(valNum) {
+            if (converter.dollars.value <= 0)
+                window.alert("Enter Value Greaterthan 0");
+            else {
+    
+                document.getElementById("taka").value = (valNum * 84.76).toFixed(2);
+                document.getElementById("rupee").value = (valNum * 75.24).toFixed(2);
+                document.getElementById("pound").value = (valNum * 0.80).toFixed(2);
+                document.getElementById("yen").value = (valNum * 107.28).toFixed(2);
+                
+            }
+        }
+        function convertRupeesToOthers(valNum) {
+            if (converter.rupees.value <= 0)
+                window.alert("Enter Value Greaterthan 0");
+            else {
+    
+                document.getElementById("taka").value = (valNum * 1.13).toFixed(2);
+                document.getElementById("dollar").value = (valNum * 0.013).toFixed(2);
+                document.getElementById("pound").value = (valNum * 0.011).toFixed(2);
+                document.getElementById("yen").value = (valNum * 1.43).toFixed(2);
+                
+            }
+        }
+        function convertPoundsToOthers(valNum) {
+            if (converter.pounds.value <= 0)
+                window.alert("Enter Value Greaterthan 0");
+            else {
+    
+                document.getElementById("taka").value = (valNum * 106.50).toFixed(2);
+                document.getElementById("dollar").value = (valNum * 1.26).toFixed(2);
+                document.getElementById("rupee").value = (valNum * 94.52).toFixed(2);
+                document.getElementById("yen").value = (valNum * 134.74).toFixed(2);
+                
+            }
+        }
+        function convertYensToOthers(valNum) {
+            if (converter.yens.value <= 0)
+                window.alert("Enter Value Greaterthan 0");
+            else {
+    
+                document.getElementById("taka").value = (valNum * 0.79).toFixed(2);
+                document.getElementById("dollar").value = (valNum * 0.0093).toFixed(2);
+                document.getElementById("rupee").value = (valNum * 0.70).toFixed(2);
+                document.getElementById("pound").value = (valNum * 0.0074).toFixed(2);
+                
+            }
+        }
+        
+var d = new Date();
+d.setDate(14);
+document.getElementById("demo").innerHTML = d;
+
+    </script>
+</head>
+
+
+<body>
+    <form name="converter">
+    <div class="container">
+        <div class="header">
+            <h1>currency converter</h1>
+        </div>
+        
+        <div class="date" id="demo">
+            <script>
+                var d = new Date();
+                d.setDate(15);
+                document.getElementById("demo").innerHTML = d;
+                </script>
+        </div>
+        <ul class="currencies">
+            <li class="currency base-currency" id="usd">
+                <img src="2000px-Flag_of_Bangladesh.svg.png" height="90px " width="180px" alt="usa" class="flag">
+                <div class="info">
+                    <input class="input" type="number" id="taka" name="takas" placeholder="0.0000" required>
+                    <input type="button" value="Convert" onclick=" currencyConverter(converter.takas.value)"><br><br>
+                    <p class="currency-name">BDT - BD taka</p>
+                    <p class="currency-base-rate"> <br><br>   </p>
+                </div>
+                 </li>
+
+            <li class="currency" >
+                <img src="usa.JPG" height="90px " width="180px" alt="usa" class="flag">
+                <div class="info">
+                   <input class="input" id="dollar" name="dollars" placeholder="0.0000">
+                   <input type="button" value="Convert" onclick="convertDollarToOthers(converter.dollars.value)"><br><br>
+                    <p class="currency-name">USD - US dollar</p>
+                    <p class="currency-base-rate"><br><br></p>
+                </div>
+            </li>
+
+
+            <li class="currency">
+                <img src="1200px-Flag_of_India.svg.png" height="90px " width="180px" alt="india" class="flag">
+
+                <div class="info">
+                    
+                        <input class="input" id="rupee" name="rupees" placeholder="0.0000">
+                        <input type="button" value="Convert" onclick="convertRupeesToOthers(converter.rupees.value)"><br><br>
+                    <p class="currency-name">INR - Indian Rupee</p>
+                    <p class="currency-base-rate"><br><br></p>
+                </div>
+            </li>
+
+
+            <li class="currency" id="usd">
+                <img src="united kingdom.JPG" height="90px " width="180px" alt="usa" class="flag">
+
+                <div class="info">
+                     <input class="input" id="pound" name="pounds" placeholder="0.0000">
+                     <input type="button" value="Convert" onclick="convertPoundsToOthers(converter.pounds.value)"><br><br>
+                    <p class="currency-name">GBP - British pound</p>
+                    <p class="currency-base-rate"><br><br></p>
+                </div>
+            </li>
+
+            <li class="currency" id="usd">
+                <img src="1200px-Flag_of_Japan.svg.png" height="90px " width="180px" alt="usa" class="flag">
+
+                <div class="info">
+                
+                        <input class="input" id="yen" name="yens" placeholder="0.0000">
+                        <input type="button" value="Convert" onclick="convertYensToOthers(converter.yens.value)"><br><br>
+                    <p class="currency-name">JPY - Japanese Yen</p>
+                    <p class="currency-base-rate"><br><br></p>
+                </div>
+            </li>
+
+
+        </ul>
+        
+        <p class="p"></p>
+
+        
+        <ul class="add-currency-list"></ul>
+        <button class="resetbt" type="reset" value="Reset">Reset</button>
+        <button class="add-currency-btn">Add Currency</button>
+
+    </div>
+</form>
+</body>
+
+</html>
